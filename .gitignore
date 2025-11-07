@@ -1,0 +1,104 @@
+# ==========================
+# Detectron2 Jetson Project
+# ==========================
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+env/
+.ipynb_checkpoints/
+
+# Logs and checkpoints
+*.log
+*.out
+*.err
+*.pth
+*.ckpt
+output/
+runs/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Pip version artifacts accidentally created by shell redirection
+=0.*
+>=*
+<=*
+
+# Jetson container temp files
+/tmp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Docker and container files
+*.tar
+*.plan
+*.onnx
+*.engine
+*.pt
+*.bin
+
+# Large models & weights
+*.pth
+*.pkl
+*.ckpt
+model_final.*
+weights/
+models/
+checkpoints/
+
+# Datasets (don't upload COCO or your training data)
+datasets/
+data/
+*.zip
+*.tar.gz
+*.tgz
+
+# Visual output and results
+demo/out.jpg
+demo/*.png
+demo/*.jpg
+*.jpeg
+
+# IDE / editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python packaging / pip cache
+pip-wheel-metadata/
+*.whl
+
+# Jetson / NVIDIA cache or lock files
+*.nv
+*.lock
+.cache/
+__MACOSX/
+
+# TensorRT / ONNX exports
+*.onnx
+*.plan
+*.engine
+*.trt
+*.cache
+
+# Miscellaneous
+nohup.out
+
