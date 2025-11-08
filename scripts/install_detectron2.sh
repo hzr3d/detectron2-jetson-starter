@@ -36,7 +36,7 @@ apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install
 
 pip3 install --upgrade pip --no-cache-dir --index-url https://pypi.org/simple --timeout 40 --retries 1
 pip3 install --no-cache-dir --index-url https://pypi.org/simple --timeout 40 --retries 1 \
-    wheel ninja Pillow matplotlib yacs tqdm termcolor cloudpickle pyyaml tabulate "iopath>=0.1.9 fvcore>=0.1.5.post20221221"
+    wheel ninja Pillow matplotlib yacs tqdm termcolor cloudpickle pyyaml tabulate ""iopath>=0.1.9" "fvcore>=0.1.5.post20221221""
 
 export FORCE_CUDA=1
 export TORCH_CUDA_ARCH_LIST="8.7"

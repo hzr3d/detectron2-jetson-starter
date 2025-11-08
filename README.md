@@ -1,3 +1,5 @@
+For maintenance and persistence tips, see [JETSON_MAINTENANCE.md](JETSON_MAINTENANCE.md).
+
 # Detectron2 on Jetson Orin Nano (JetPack R36.4.x, cuDNN 9.3)
 
 This project provides a **ready-to-run container setup** for Facebook AI Research’s **Detectron2** on **Jetson Orin Nano**, running **JetPack 6.1 (Jetson Linux 36.4.x)** with **CUDA 12.6** and **cuDNN 9.3 (9.3.0.75-1)**.

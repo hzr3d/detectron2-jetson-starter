@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
+NAME=detectron2
+IMAGE=dustynv/l4t-pytorch:r36.4.0
 
-IMAGE="dustynv/l4t-pytorch"
-if command -v autotag >/dev/null 2>&1; then
-  IMAGE_TAG="$(autotag l4t-pytorch)"
+if sudo docker ps -a --format '{{.Names}}' | grep -q "^${NAME}$"; then
+  echo "Reattaching to existing container ${NAME}..."
+  sudo docker start -ai ${NAME}
 else
-  IMAGE_TAG="${L4T_TAG:-r36.4.0}"
+  echo "Creating new container ${NAME}..."
+  sudo docker run -it --name ${NAME} --runtime nvidia --network host \
+    -v $(pwd):/workspace -w /workspace ${IMAGE} /bin/bash
 fi
 
-XSOCK=/tmp/.X11-unix
-XAUTH=/tmp/.docker.xauth
-if [ ! -f "$XAUTH" ]; then
-  xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge - || true
-  chmod a+r $XAUTH || true
-fi
-
-echo "Launching ${IMAGE}:${IMAGE_TAG} ..."
-sudo docker run -it --rm --runtime nvidia --network host   -e DISPLAY=$DISPLAY   -e XAUTHORITY=${XAUTH}   -v ${XSOCK}:${XSOCK}   -v ${XAUTH}:${XAUTH}   -e QT_X11_NO_MITSHM=1   -v /dev:/dev   -v /tmp:/tmp   -v $(pwd):/workspace   --workdir /workspace   ${IMAGE}:${IMAGE_TAG} /bin/bash

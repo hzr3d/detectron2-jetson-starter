@@ -1,3 +1,5 @@
+For maintenance and persistence tips, see [JETSON_MAINTENANCE.md](JETSON_MAINTENANCE.md).
+
 # Detectron2 on Jetson Orin Nano (JetPack R36.4.x, cuDNN 9.3)
 
 Ready-to-run container setup for **Detectron2** on **Jetson Orin Nano** (JetPack **6.1 / R36.4.x**, CUDA 12.6, cuDNN 9.3).  
